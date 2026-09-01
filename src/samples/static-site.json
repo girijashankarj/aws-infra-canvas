@@ -1,0 +1,63 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "A CloudFront-fronted static site with a logging bucket.",
+  "Resources": {
+    "SiteBucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            { "ServerSideEncryptionByDefault": { "SSEAlgorithm": "AES256" } }
+          ]
+        }
+      }
+    },
+    "LogBucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "LifecycleConfiguration": {
+          "Rules": [{ "Status": "Enabled", "ExpirationInDays": 90 }]
+        }
+      }
+    },
+    "SitePolicy": {
+      "Type": "AWS::S3::BucketPolicy",
+      "Properties": {
+        "Bucket": { "Ref": "SiteBucket" },
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": { "Service": "cloudfront.amazonaws.com" },
+              "Action": "s3:GetObject",
+              "Resource": { "Fn::Sub": "${SiteBucket.Arn}/*" }
+            }
+          ]
+        }
+      }
+    },
+    "Distribution": {
+      "Type": "AWS::CloudFront::Distribution",
+      "DependsOn": ["SitePolicy"],
+      "Properties": {
+        "DistributionConfig": {
+          "Enabled": true,
+          "DefaultRootObject": "index.html",
+          "Logging": { "Bucket": { "Fn::GetAtt": ["LogBucket", "DomainName"] } },
+          "Origins": [
+            {
+              "Id": "site",
+              "DomainName": { "Fn::GetAtt": ["SiteBucket", "RegionalDomainName"] },
+              "S3OriginConfig": {}
+            }
+          ],
+          "DefaultCacheBehavior": {
+            "TargetOriginId": "site",
+            "ViewerProtocolPolicy": "redirect-to-https"
+          }
+        }
+      }
+    }
+  }
+}

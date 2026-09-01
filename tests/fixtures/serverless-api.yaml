@@ -1,0 +1,55 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Serverless API with a table and a queue.
+
+# Parameters are referenced but are not resources.
+Parameters:
+  Stage:
+    Type: String
+    Default: dev
+
+Resources:
+  ItemsTable:
+    Type: AWS::DynamoDB::Table            # the primary store
+    Properties:
+      TableName: !Sub '${AWS::StackName}-items-${Stage}'
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: pk
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pk
+          KeyType: HASH
+
+  WorkQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 30
+
+  ApiRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+
+  ApiFunction:
+    Type: AWS::Lambda::Function
+    DependsOn: ItemsTable
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs20.x
+      MemorySize: 128
+      Role: !GetAtt [ ApiRole, Arn ]
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref ItemsTable
+          QUEUE_URL: !Ref WorkQueue
+          TABLE_ARN: !GetAtt ItemsTable.Arn
+
+Outputs:
+  FunctionArn:
+    Value: !GetAtt ApiFunction.Arn

@@ -1,0 +1,385 @@
+{
+  "generatedAt": "2026-09-01",
+  "source": {
+    "server": "awslabs.aws-documentation-mcp-server",
+    "tools": [
+      "read_documentation",
+      "read_sections",
+      "search_table",
+      "search_documentation",
+      "recommend"
+    ],
+    "note": "Generated at build time by scripts/fetch-aws-docs.mjs. No language model is involved."
+  },
+  "services": {
+    "ec2.vpc": {
+      "title": "aws::ec2::vpc",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-vpc.html"
+    },
+    "ec2.subnet": {
+      "title": "AWS::EC2::Subnet Ref return value",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-subnet.html"
+    },
+    "ec2.securitygroup": {
+      "title": "aws::ec2::securitygroup",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-securitygroup.html"
+    },
+    "ec2.internetgateway": {
+      "title": "AWS::EC2::InternetGateway",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-internetgateway.html"
+    },
+    "ec2.natgateway": {
+      "title": "create a public NAT gateway with CloudFormation",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-natgateway.html"
+    },
+    "ec2.routetable": {
+      "title": "AWS::EC2::RouteTable",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-routetable.html"
+    },
+    "ec2.route": {
+      "title": "AWS::EC2::Route",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-route.html"
+    },
+    "ec2.subnetrouteassoc": {
+      "title": "mySubnetRouteTableAssociation YAML example",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-subnetroutetableassociation.html"
+    },
+    "ec2.eip": {
+      "title": "AWS::EC2::EIP",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-eip.html"
+    },
+    "ec2.vpcendpoint": {
+      "title": "AWS::EC2::VPCEndpoint",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-vpcendpoint.html"
+    },
+    "lambda.function": {
+      "title": "aws::lambda::function",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-lambda-function.html"
+    },
+    "lambda.permission": {
+      "title": "FunctionUrlAuthType",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-lambda-permission.html"
+    },
+    "lambda.eventsourcemapping": {
+      "title": "Lambda event source mapping",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-lambda-eventsourcemapping.html"
+    },
+    "ec2.instance": {
+      "title": "EC2 key pair",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-instance.html"
+    },
+    "autoscaling.group": {
+      "title": "AWS::AutoScaling::AutoScalingGroup",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-autoscaling-autoscalinggroup.html"
+    },
+    "ec2.launchtemplate": {
+      "title": "LaunchTemplateData",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ec2-launchtemplate.html"
+    },
+    "ecs.cluster": {
+      "title": "aws::ecs::cluster",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ecs-cluster.html"
+    },
+    "ecs.service": {
+      "title": "aws::ecs::service",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ecs-service.html"
+    },
+    "ecs.taskdefinition": {
+      "title": "ECS proxy configuration",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ecs-taskdefinition.html"
+    },
+    "eks.cluster": {
+      "title": "Amazon EKS Control Plane",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-eks-cluster.html"
+    },
+    "ecr.repository": {
+      "title": "AWS::ECR::Repository",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ecr-repository.html"
+    },
+    "s3.bucket": {
+      "title": "S3 bucket ACL",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-s3-bucket.html"
+    },
+    "s3.bucketpolicy": {
+      "title": "AWS::S3::BucketPolicy",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-s3-bucketpolicy.html"
+    },
+    "efs.filesystem": {
+      "title": "AWS::EFS::FileSystem",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-efs-filesystem.html"
+    },
+    "dynamodb.table": {
+      "title": "aws::dynamodb::table",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-dynamodb-table.html"
+    },
+    "rds.instance": {
+      "title": "AWS::RDS::DBInstance",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-rds-dbinstance.html"
+    },
+    "rds.cluster": {
+      "title": "Performance Insights for DB cluster",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-rds-dbcluster.html"
+    },
+    "rds.subnetgroup": {
+      "title": "RDS DB subnet group",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-rds-dbsubnetgroup.html"
+    },
+    "elasticache.cluster": {
+      "title": "aws::elasticache::cachecluster",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-elasticache-cachecluster.html"
+    },
+    "sqs.queue": {
+      "title": "queue type cannot be changed after creation",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-sqs-queue.html"
+    },
+    "sns.topic": {
+      "title": "aws::sns::topic",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-sns-topic.html"
+    },
+    "sns.subscription": {
+      "title": "AWS::SNS::Subscription",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-sns-subscription.html"
+    },
+    "events.rule": {
+      "title": "scheduled Lambda rule YAML example",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-events-rule.html"
+    },
+    "stepfunctions.statemachine": {
+      "title": "AWS::StepFunctions::StateMachine",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-stepfunctions-statemachine.html"
+    },
+    "kinesis.stream": {
+      "title": "aws::kinesis::stream",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-kinesis-stream.html"
+    },
+    "apigateway.restapi": {
+      "title": "AWS::ApiGateway::RestApi",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-apigateway-restapi.html"
+    },
+    "apigateway.method": {
+      "title": "API Gateway method request validator",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-apigateway-method.html"
+    },
+    "apigateway.resource": {
+      "title": "AWS::ApiGateway::Resource",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-apigateway-resource.html"
+    },
+    "apigatewayv2.api": {
+      "title": "AWS::ApiGatewayV2::Api",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-apigatewayv2-api.html"
+    },
+    "cloudfront.distribution": {
+      "title": "aws::cloudfront::distribution",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-cloudfront-distribution.html"
+    },
+    "elbv2.loadbalancer": {
+      "title": "aws::elasticloadbalancingv2::loadbalancer",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-elasticloadbalancingv2-loadbalancer.html"
+    },
+    "elbv2.targetgroup": {
+      "title": "Target group with ip targets YAML example",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-elasticloadbalancingv2-targetgroup.html"
+    },
+    "elbv2.listener": {
+      "title": "ELB listener",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-elasticloadbalancingv2-listener.html"
+    },
+    "route53.recordset": {
+      "title": "AWS::Route53::RecordSet",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-route53-recordset.html"
+    },
+    "iam.role": {
+      "title": "AWS::IAM::Role",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-role.html"
+    },
+    "iam.policy": {
+      "title": "aws::iam::policy",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-policy.html"
+    },
+    "iam.managedpolicy": {
+      "title": "AWS::IAM::ManagedPolicy",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-managedpolicy.html"
+    },
+    "iam.instanceprofile": {
+      "title": "IAM instance profile",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-iam-instanceprofile.html"
+    },
+    "kms.key": {
+      "title": "AWS::KMS::Key",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-kms-key.html"
+    },
+    "secretsmanager.secret": {
+      "title": "AWS::SecretsManager::Secret",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-secretsmanager-secret.html"
+    },
+    "cognito.userpool": {
+      "title": "AWS::Cognito::UserPool",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-cognito-userpool.html"
+    },
+    "logs.loggroup": {
+      "title": "AWS::Logs::LogGroup",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-logs-loggroup.html"
+    },
+    "cloudwatch.alarm": {
+      "title": "aws::cloudwatch::alarm",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-cloudwatch-alarm.html"
+    },
+    "ssm.parameter": {
+      "title": "aws::ssm::parameter",
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-ssm-parameter.html"
+    }
+  },
+  "pillars": {
+    "operational-excellence": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/welcome.html",
+      "ok": true,
+      "title": "Operational Excellence Pillar - AWS Well-Architected Framework"
+    },
+    "security": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/welcome.html",
+      "ok": true,
+      "title": "Security Pillar - AWS Well-Architected Framework"
+    },
+    "reliability": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html",
+      "ok": true,
+      "title": "Reliability Pillar - AWS Well-Architected Framework"
+    },
+    "performance-efficiency": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/welcome.html",
+      "ok": true,
+      "title": "Performance Efficiency Pillar - AWS Well-Architected Framework"
+    },
+    "cost-optimization": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html",
+      "ok": true,
+      "title": "Cost Optimization Pillar - AWS Well-Architected Framework"
+    },
+    "sustainability": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/welcome.html",
+      "ok": true
+    }
+  },
+  "rules": {
+    "SEC-S3-ENCRYPTION": {
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html",
+      "ok": true,
+      "title": "Protecting data with server-side encryption"
+    },
+    "SEC-S3-PUBLIC-ACCESS": {
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html",
+      "ok": true,
+      "title": "Blocking public access to your Amazon S3 storage"
+    },
+    "SEC-SG-OPEN-ADMIN": {
+      "url": "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html",
+      "ok": true,
+      "title": "Control traffic to your AWS resources using security groups"
+    },
+    "SEC-SG-OPEN-INGRESS": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/protecting-networks.html",
+      "ok": true,
+      "title": "Protecting networks"
+    },
+    "SEC-IAM-WILDCARD": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/sec_permissions_least_privileges.html",
+      "ok": true,
+      "title": "SEC03-BP02 Grant least privilege access"
+    },
+    "SEC-RDS-ENCRYPTION": {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html",
+      "ok": true,
+      "title": "Encrypting Amazon RDS resources"
+    },
+    "SEC-RDS-PUBLIC": {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html",
+      "ok": true,
+      "title": "Working with a DB instance in a VPC"
+    },
+    "SEC-PLAINTEXT-SECRET": {
+      "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html",
+      "ok": true,
+      "title": "What is AWS Secrets Manager?"
+    },
+    "REL-RDS-BACKUP": {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html",
+      "ok": true,
+      "title": "Introduction to backups"
+    },
+    "REL-RDS-MULTI-AZ": {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html",
+      "ok": true,
+      "title": "Configuring and managing a Multi-AZ deployment for Amazon RDS"
+    },
+    "REL-DELETION-PROTECTION": {
+      "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html",
+      "ok": true,
+      "title": "`DeletionPolicy` attribute"
+    },
+    "REL-SQS-DLQ": {
+      "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html",
+      "ok": true,
+      "title": "Using dead-letter queues in Amazon SQS"
+    },
+    "REL-MULTI-AZ-SUBNETS": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/rel_fault_isolation_multiaz_region_system.html",
+      "ok": true,
+      "title": "REL10-BP01 Deploy the workload to multiple locations"
+    },
+    "OPS-LAMBDA-TRACING": {
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html",
+      "ok": true,
+      "title": "Visualize Lambda function invocations using AWS X-Ray"
+    },
+    "OPS-RESOURCE-TAGS": {
+      "url": "https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html",
+      "ok": true,
+      "title": "Best Practices for Tagging AWS Resources"
+    },
+    "OPS-LAMBDA-LOG-GROUP": {
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/monitoring-cloudwatchlogs.html",
+      "ok": true,
+      "title": "Sending Lambda function logs to CloudWatch Logs"
+    },
+    "COST-LOG-RETENTION": {
+      "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html",
+      "ok": true,
+      "title": "Working with log groups and log streams"
+    },
+    "COST-LAMBDA-OVERSIZED": {
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html",
+      "ok": true,
+      "title": "Configuring AWS Lambda functions"
+    },
+    "COST-DDB-BILLING-MODE": {
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html",
+      "ok": true,
+      "title": "DynamoDB throughput capacity"
+    },
+    "PERF-LAMBDA-MEMORY-DEFAULT": {
+      "url": "https://docs.aws.amazon.com/lambda/latest/operatorguide/computing-power.html",
+      "ok": true,
+      "title": "Configure Lambda function memory"
+    },
+    "PERF-RDS-INSIGHTS": {
+      "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html",
+      "ok": true,
+      "title": "Monitoring DB load with Amazon CloudWatch Database Insights on Amazon RDS"
+    },
+    "PERF-S3-CDN": {
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DownloadDistS3AndCustomOrigins.html",
+      "ok": true,
+      "title": "Use various origins with CloudFront distributions"
+    },
+    "SUS-LAMBDA-ARM": {
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html",
+      "ok": true,
+      "title": "Selecting and configuring an instruction set architecture for your Lambda function"
+    },
+    "SUS-OLD-GENERATION": {
+      "url": "https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/hardware-and-services.html",
+      "ok": true,
+      "title": "Hardware and services"
+    }
+  }
+}

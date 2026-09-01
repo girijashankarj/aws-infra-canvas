@@ -1,0 +1,25 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "ItemsTable": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "BillingMode": "PAY_PER_REQUEST"
+      }
+    },
+    "ApiFunction": {
+      "Type": "AWS::Lambda::Function",
+      "DependsOn": ["ItemsTable"],
+      "Properties": {
+        "MemorySize": 128,
+        "Environment": {
+          "Variables": {
+            "TABLE_NAME": { "Ref": "ItemsTable" },
+            "TABLE_ARN": { "Fn::GetAtt": ["ItemsTable", "Arn"] },
+            "LABEL": { "Fn::Sub": "table-${ItemsTable}" }
+          }
+        }
+      }
+    }
+  }
+}
