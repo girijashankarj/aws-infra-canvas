@@ -10,10 +10,63 @@ that point back at the resource that caused them.
 
 Runs entirely in the browser. No backend, no AWS credentials, no network calls.
 
+![Infra Canvas showing a CloudFormation VPC web-tier template beside its architecture diagram](docs/screenshot.png)
+
 ```bash
 npm install
 npm run dev
 ```
+
+## Features
+
+**Two-pane workspace.** Monaco editor on the left, React Flow canvas on the
+right, with a draggable splitter. The source is the only source of truth; the
+diagram is always a projection of it. Clicking a node reveals it in the editor;
+moving the cursor in the source selects the matching resource on the canvas.
+
+**Formats.** CloudFormation YAML and JSON, Terraform HCL, and AWS CDK
+TypeScript. The format is detected from the content (and the filename, when
+there is one); the toolbar dropdown overrides it.
+
+**Canvas.** Nested containers for VPCs and subnets, edges labelled with the
+property that created them, category-tinted service glyphs, a minimap, zoom
+controls, and ELK auto-layout. Selecting a resource highlights its links and
+dims the rest. Delete / Backspace removes a node from the template.
+
+**Add, connect, inspect.** Drag a service from the palette onto the canvas to
+insert it. Drawing an edge opens a dialog that suggests the property path
+(`!Ref` / Terraform equivalent) so the link is a real reference, not a
+decoration. The inspector shows every property, lets you rename the logical ID,
+edit scalars, drop properties, jump to AWS docs, and delete the resource.
+
+**Files.** Open with the File System Access API (or a file picker), drop a
+template onto the editor, and Save writes back to the same file — or Download
+where the browser cannot. Bundled samples cover a serverless API, a VPC web
+tier, a CloudFront/S3 static site (JSON), a Terraform Lambda + VPC, and a
+read-only CDK stack.
+
+**Well-Architected review.** A live score out of 100 across the six pillars,
+findings with rationale, remediation, severity, and AWS doc links. Opening the
+panel badges nodes that have findings. Rules skip checks a dialect cannot
+answer, so CDK is not marked down for imperative security-group rules.
+
+**Diagnostics.** Parse errors and warnings appear as Monaco markers, in a
+toggleable problems list, and in the status bar. Clicking a problem jumps to
+its offset in the source.
+
+**Theme and layout.** Light and dark themes. With **Save layout** on,
+CloudFormation stores node positions under `Metadata.DiagramLayout` (ignored
+by CloudFormation itself). Opening a file never modifies it; only dragging or
+**Auto layout** persists positions.
+
+**Palette services.** VPC, subnet, security group, internet gateway, NAT
+gateway, Lambda, EC2, ECS cluster, S3, DynamoDB, RDS, SQS, SNS, EventBridge,
+API Gateway (REST and HTTP), CloudFront, load balancer, IAM role, and CloudWatch
+Logs. Many more types still render if they appear in a template — including
+EKS, ECR, ElastiCache, Step Functions, Kinesis, Cognito, KMS, Secrets Manager,
+and Route 53.
+
+![Well-Architected review panel listing findings against the open template](docs/screenshot-review.png)
 
 ## What it understands
 
@@ -24,14 +77,21 @@ npm run dev
 | Terraform (HCL) | ✅ | ✅ | — |
 | AWS CDK (TypeScript) | ✅ | — | — |
 
-The format is detected from the content (and the filename, when there is one);
-the dropdown in the toolbar overrides it.
-
 CDK is **read-only by design**. A CDK app is a program rather than a
 description — what it produces depends on control flow, helper functions, and
 construct libraries — so the diagram is derived from the construct calls, but
 edits are not translated back into TypeScript. To edit a CDK stack here, run
 `cdk synth` and open the template it writes to `cdk.out/`.
+
+## Samples
+
+| Sample | What it shows |
+| --- | --- |
+| Serverless API | Lambda, DynamoDB, SQS and an HTTP API |
+| VPC web tier | Nested subnets, a load balancer and a private database |
+| Static site (JSON) | CloudFront over S3, as a JSON template |
+| Terraform VPC + Lambda | The same shape in HCL, fully round-trippable |
+| CDK stack (read-only) | TypeScript constructs, imported for viewing only |
 
 ## The Well-Architected review
 
@@ -40,14 +100,19 @@ The toolbar shows a score out of 100 across the six pillars of the
 finding with why it matters, what to change, the resource responsible, and a
 link into the AWS documentation. Nodes with findings get a badge on the canvas.
 
+Checks currently cover encryption at rest, public access, open administrative
+ports, wildcard IAM, plaintext secrets, RDS backups and Multi-AZ, deletion
+protection, SQS dead-letter queues, multi-AZ subnets, Lambda tracing and log
+groups, resource tags, log retention, oversized Lambda memory, DynamoDB billing
+mode, RDS Performance Insights, CloudFront in front of S3, Graviton/ARM, and
+old instance generations.
+
 Rules are written once and read the right property spelling for whichever
 dialect is open — `BackupRetentionPeriod`, `backup_retention_period`,
 `backupRetention`. A rule that a dialect genuinely cannot answer is *skipped*,
-not failed, so CDK is not marked down for adding security-group rules
-imperatively.
+not failed.
 
-This scores the mechanical layer a template can express — encryption at rest,
-log retention, open administrative ports, wildcard IAM. It is a starting point
+This scores the mechanical layer a template can express. It is a starting point
 for a Well-Architected review, not a substitute for one; the framework's real
 questions are answered by people, not parsers. See
 [docs/well-architected.md](docs/well-architected.md) for the scoring model and
@@ -96,10 +161,9 @@ the [AWS Documentation MCP server][mcp], queried at **build time** by
 That server is stdio-only — no HTTP, no CORS — so a browser can never call it,
 and this app has no backend. But an LLM was never needed to call it either: MCP
 is JSON-RPC over a pipe, and its tools are ordinary functions. The script drives
-them with fixed arguments and deterministic result-picking, so it resolves 54
-resource reference pages and verifies all 30 hand-written rule links on every
-run. It has already caught one broken link. Details, including why prose is
-*not* generated this way, in
+them with fixed arguments and deterministic result-picking, so it resolves
+resource reference pages and verifies hand-written rule links on every run.
+Details, including why prose is *not* generated this way, in
 [docs/mcp-enrichment.md](docs/mcp-enrichment.md).
 
 ```bash
